@@ -4,6 +4,7 @@ import { createBrowserClient } from "@supabase/ssr";
 import { GitHubIcon } from "./icons";
 import { Session } from "@supabase/supabase-js";
 import { useRouter } from "next/navigation";
+import { Button } from "@nextui-org/react";
 
 interface iProps {
   session: Session | null;
@@ -34,16 +35,16 @@ export const AuthButton = ({ session }: iProps) => {
   return (
     <header className="flex justify-center">
       {session === null ? (
-        <button
+        <Button
           onClick={handleSignIn}
           type="button"
-          className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 me-2 mb-2 mr-0"
+          className="text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mr-0"
         >
           <GitHubIcon />
           Sign in with Github
-        </button>
+        </Button>
       ) : (
-        <button onClick={handleSignOut}>Sign Out</button>
+        <Button onClick={handleSignOut}>Sign Out</Button>
       )}
     </header>
   );
