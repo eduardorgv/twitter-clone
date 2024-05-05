@@ -1,6 +1,6 @@
 import { AuthButton } from "./auth-button-client";
-import { createBrowserClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import { createBrowserClient } from "@supabase/ssr";
 
 export const AuthButtonServer = async () => {
   const cookieStore = cookies();
