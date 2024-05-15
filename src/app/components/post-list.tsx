@@ -1,7 +1,8 @@
+import { type Post } from "@/app/types/posts";
 import PostCard from "./post-card";
 
 interface iProps {
-  posts: any | null;
+  posts: Post[];
 }
 
 export default function PostList({ posts }: iProps) {
